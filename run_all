@@ -1,0 +1,13 @@
+#!/usr/bin/bash
+
+a=$2
+
+./run [ip2] $1 $(seq -s , $((a * 1)) $((a * 1 + a - 1))) >/dev/null 2>&1 &
+./run [ip3] $1 $(seq -s , $((a * 2)) $((a * 2 + a - 1))) >/dev/null 2>&1 &
+./run [ip4] $1 $(seq -s , $((a * 3)) $((a * 3 + a - 1))) >/dev/null 2>&1 &
+./run [ip5] $1 $(seq -s , $((a * 4)) $((a * 4 + a - 1))) >/dev/null 2>&1 &
+./run [ip6] $1 $(seq -s , $((a * 5)) $((a * 5 + a - 1))) >/dev/null 2>&1 &
+./run [ip7] $1 $(seq -s , $((a * 6)) $((a * 6 + a - 1))) >/dev/null 2>&1 &
+./run [ip8] $1 $(seq -s , $((a * 7)) $((a * 7 + a - 1))) >/dev/null 2>&1 &
+
+./run [ip1] $1 $(seq -s , 0 $((a - 1)))

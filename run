@@ -1,0 +1,9 @@
+#!/usr/bin/bash
+
+rsync -rtlpzzP --filter=":- .gitignore" --exclude='.git*' . $1:/root/hap && \
+ssh $1 -T <<EOF
+    pkill python
+    cd /root/hap
+    export PATH=/opt/conda/bin:\$PATH
+    cargo build --release && python ${@:2}
+EOF

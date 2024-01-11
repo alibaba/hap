@@ -1,0 +1,15 @@
+[package]
+name = "hap"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+path = "hap.rs"
+crate-type = ["cdylib"]
+
+[dependencies]
+cpython = { version = "0.7", features = ["extension-module"] }
+smallvec = "1"
+float-ord = "0.3"
+ctrlc = "3.2"
+coin_cbc = "0.1"
